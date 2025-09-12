@@ -15,3 +15,11 @@ Form Validation: Client-side and server-side validation
 
 🚀 Live Demo
 [Add your Render deployment URL here once deployed]
+
+🔧 Technologies Used
+
+Backend: Flask (Python web framework)
+Database: SQLite with SQLAlchemy ORM
+Authentication: Flask-Login, Werkzeug password hashing
+Frontend: HTML5, CSS3, JavaScript
+Deployment: Render (Platform-as-a-Service)
