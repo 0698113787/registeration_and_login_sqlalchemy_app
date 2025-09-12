@@ -6,14 +6,21 @@ This app features a modern, responsive design and implements secure password has
 🌟 Features
 
 Secure User Registration: Create new accounts with password confirmation
+
 User Authentication: Login with username and password
+
 Password Security: Passwords are hashed using Werkzeug's security functions
+
 Flash Messages: User-friendly feedback for login/registration attempts
+
 Responsive Design: Modern UI with custom CSS styling
+
 SQLite Database: Lightweight database for user data storage
+
 Form Validation: Client-side and server-side validation
 
 🚀 Live Demo
+
 [Add your Render deployment URL here once deployed]
 
 🔧 Technologies Used
@@ -27,3 +34,17 @@ Authentication: Flask-Login, Werkzeug password hashing
 Frontend: HTML5, CSS3, JavaScript
 
 Deployment: Render (Platform-as-a-Service)
+
+👤 Author
+
+Andile Ntshangase(Mgazi)
+
+GitHub: 0698113787
+
+Email: vuyiswaandile176@gmail.com
+
+🙏 Acknowledgments
+
+Flask documentation and community
+
+Render platform for hosting
