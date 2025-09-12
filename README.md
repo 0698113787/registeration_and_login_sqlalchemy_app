@@ -19,7 +19,11 @@ Form Validation: Client-side and server-side validation
 🔧 Technologies Used
 
 Backend: Flask (Python web framework)
+
 Database: SQLite with SQLAlchemy ORM
+
 Authentication: Flask-Login, Werkzeug password hashing
+
 Frontend: HTML5, CSS3, JavaScript
+
 Deployment: Render (Platform-as-a-Service)
