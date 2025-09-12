@@ -1,4 +1,8 @@
-A secure and user-friendly web application built with Flask that provides user registration, login, and authentication functionality. This app features a modern, responsive design and implements secure password hashing for user data protection.
+A secure and user-friendly web application built with Flask that provides user registration, login, and authentication functionality.
+
+This app features a modern, responsive design and implements secure password hashing for user data protection.
+
+
 🌟 Features
 
 Secure User Registration: Create new accounts with password confirmation
