@@ -6,7 +6,7 @@ import os
 
 
 
-# Initialize Flask app8
+
 app = Flask(__name__)
 
 # Set configuration BEFORE creating SQLAlchemy instance
@@ -14,10 +14,10 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SECRET_KEY'] = 'mysecretkey'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# Now create SQLAlchemy instance
+# To create SQLAlchemy instance
 db = SQLAlchemy(app)
 
-# Define User model
+#  User model Definition
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), nullable=False)
@@ -58,8 +58,9 @@ def register():
          db.session.commit()
          # Redirect to home page after successful registration
          return redirect(url_for('login'))
-    
+    redirect(url_for('login'))
     return render_template('register.html')
+    
 
 
 @app.route('/login',methods=['GET','POST'])
