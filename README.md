@@ -19,7 +19,7 @@ This app features a modern, responsive design and implements secure password has
 
 **Form Validation**: Client-side and server-side validation
 
-🚀 **Live Demo**
+🚀**Live Demo**
 
  https://registeration-and-login-auth.onrender.com
  
@@ -30,7 +30,7 @@ This app features a modern, responsive design and implements secure password has
 Python 3.7 or higher installed
 pip package manager
 
-🔧 Technologies Used
+🔧**Technologies Used**:
 
 **Backend**: Flask (Python web framework).
 
@@ -42,7 +42,7 @@ pip package manager
 
 **Deployment**: Render (Platform-as-a-Service).
 
-📱** Pages Overview**
+📱**Pages Overview**
 
 **Home Page**
 
@@ -69,7 +69,7 @@ Flash message support for login feedback.
 
 Redirect to home page on successful login.
 
-🔐 **Security Features**
+🔐**Security Features**
 
 **Password Hashing**: Uses Werkzeug's generate_password_hash() for secure password storage.
 
@@ -79,7 +79,7 @@ Redirect to home page on successful login.
 
 **Input Validation**: Both client-side and server-side validation.
 
-🚀 **Deployment**
+🚀**Deployment**
 
 **This application is configured for deployment on Render**:
 
@@ -95,13 +95,13 @@ Redirect to home page on successful login.
 
 **4. Deploy**: Render will automatically build and deploy your app
 
-**👤 Author :**
+**👤Author :**
 Andile NtshangaAW
 
 **GitHub**: 0698113787
 **Email**: vuyiswaandile176@gmail.com
 
-**🙏 Acknowledgments**
+**🙏Acknowledgments**
 
 Flask documentation and community
 Render platform for hosting
