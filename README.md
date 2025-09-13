@@ -107,4 +107,5 @@ Andile Ntshangase
 **🙏 Acknowledgments**
 
 Flask documentation and community
+
 Render platform for hosting
