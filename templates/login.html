@@ -3,17 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-    <link rel ="stylesheet" type ="text/css" href="{{url_for('static',filename='login.css')}}">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='login.css')}}">
 </head>
 <body>
-    <form action = "{{url_for('login')}} " method ='POST'>
     <div class="container">
-        <div id="flashContainer"></div>
+        <div id="flashContainer">
+            <!-- Display Flask flash messages -->
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="flash-message">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
         
         <h2 class="form-title">Login</h2>
         
-        <form id="loginForm">
+        <!-- Fixed form: Added method="POST" and action -->
+        <form method="POST" action="{{url_for('login')}}">
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -32,6 +41,5 @@
             <p><a href="{{url_for('home')}}">Back to Home</a></p>
         </div>
     </div>
-    </form>
 </body>
 </html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='dashboard.css')}}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="welcome-section">
+                <h1>🎉 Welcome to Your Dashboard!</h1>
+                <p class="subtitle">You have successfully logged in</p>
+            </div>
+            <div class="user-info">
+                <span class="user-icon">👤</span>
+                <span class="username">{{ session.get('username', 'User') }}</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="success-card">
+                <div class="success-icon">✅</div>
+                <h2>Authentication Successful!</h2>
+                <p>Your login credentials have been verified and you now have access to your personal dashboard.</p>
+            </div>
+
+            <!-- Feature Cards -->
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Secure Authentication</h3>
+                    <p>Your password is safely encrypted using industry-standard hashing techniques.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💾</div>
+                    <h3>Database Storage</h3>
+                    <p>User data is securely stored in SQLite database with proper validation.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Flask Framework</h3>
+                    <p>Built with Python Flask framework for robust web application development.</p>
+                </div>
+            </div>
+
+            <!-- Project Info Section -->
+            <div class="project-info">
+                <div class="info-card">
+                    <h2>Authentication Application</h2>
+                    <p class="made-by">Made by <strong>Andile Ntshangase Mgazi</strong></p>
+                    <p class="thank-you">Thank you for checking it out! 🙏</p>
+                    
+                    <div class="tech-stack">
+                        <h4>Built with:</h4>
+                        <div class="tech-badges">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Flask</span>
+                            <span class="tech-badge">SQLAlchemy</span>
+                            <span class="tech-badge">SQLite</span>
+                            <span class="tech-badge">HTML/CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="actions">
+                <a href="{{url_for('home')}}" class="btn btn-primary">Back to Home</a>
+                <a href="{{url_for('login')}}" class="btn btn-secondary">Logout</a>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Authentication App by Andile Ntshangase Mgazi. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
