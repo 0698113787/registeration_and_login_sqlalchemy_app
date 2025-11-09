@@ -14,10 +14,10 @@
                 <h1>🎉 Welcome to Your Dashboard!</h1>
                 <p class="subtitle">You have successfully logged in</p>
             </div>
-            <div class="user-info">
+            <a href="{{url_for('profile')}}" class="user-info">
                 <span class="user-icon">👤</span>
                 <span class="username">{{ session.get('username', 'User') }}</span>
-            </div>
+            </a>
         </header>
 
         <!-- Main Content -->
@@ -72,7 +72,7 @@
             <!-- Action Buttons -->
             <div class="actions">
                 <a href="{{url_for('home')}}" class="btn btn-primary">Back to Home</a>
-                <a href="{{url_for('login')}}" class="btn btn-secondary">Logout</a>
+                <a href="{{url_for('logout')}}" class="btn btn-secondary">Logout</a>
             </div>
         </main>
 
