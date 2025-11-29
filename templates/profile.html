@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Profile</title>
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='profile.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <!-- Navigation Bar -->
         <nav class="navbar">
             <div class="nav-content">
-                <h2 class="nav-title">My Profile</h2>
+                <h2 class="nav-title">
+                    <i class="fas fa-user-circle"></i> My Profile
+                </h2>
                 <div class="nav-links">
-                    <a href="{{url_for('dashboard')}}" class="nav-link">Dashboard</a>
-                    <a href="{{url_for('logout')}}" class="nav-link logout-link">Logout</a>
+                    <a href="{{url_for('dashboard')}}" class="nav-link">
+                        <i class="fas fa-th-large"></i> Dashboard
+                    </a>
+                    <a href="{{url_for('logout')}}" class="nav-link logout-link">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
                 </div>
             </div>
         </nav>
@@ -24,7 +31,10 @@
             {% if messages %}
                 <div class="flash-messages">
                     {% for message in messages %}
-                        <div class="flash-message">{{ message }}</div>
+                        <div class="flash-message">
+                            <i class="fas fa-check-circle"></i>
+                            {{ message }}
+                        </div>
                     {% endfor %}
                 </div>
             {% endif %}
@@ -36,36 +46,46 @@
             <div class="profile-header">
                 <div class="profile-avatar">
                     <div class="avatar-circle">
-                        <span class="avatar-text">{{ user.name[0].upper() if user.name else user.username[0].upper() }}</span>
+                        <i class="fas fa-user avatar-icon"></i>
                     </div>
                 </div>
                 <h1 class="profile-name">{{ user.name if user.name else 'No Name Set' }}</h1>
-                <p class="profile-username">@{{ user.username }}</p>
+                <p class="profile-username">
+                    <i class="fas fa-at"></i> {{ user.username }}
+                </p>
             </div>
 
             <!-- Profile Information Section -->
             <div class="profile-section">
-                <h2 class="section-title">Profile Information</h2>
+                <h2 class="section-title">
+                    <i class="fas fa-info-circle"></i> Profile Information
+                </h2>
                 
                 <div id="viewMode" class="info-view">
                     <div class="info-item">
-                        <label class="info-label">Full Name</label>
+                        <label class="info-label">
+                            <i class="fas fa-user"></i> Full Name
+                        </label>
                         <p class="info-value">{{ user.name if user.name else 'Not set' }}</p>
                     </div>
                     
                     <div class="info-item">
-                        <label class="info-label">Username</label>
+                        <label class="info-label">
+                            <i class="fas fa-at"></i> Username
+                        </label>
                         <p class="info-value">{{ user.username }}</p>
                     </div>
                     
                     <div class="info-item">
-                        <label class="info-label">User ID</label>
+                        <label class="info-label">
+                            <i class="fas fa-id-badge"></i> User ID
+                        </label>
                         <p class="info-value">#{{ user.id }}</p>
                     </div>
 
                     <div class="button-group">
                         <button onclick="enableEditMode()" class="btn btn-primary">
-                            <span class="btn-icon">✏️</span>
+                            <i class="fas fa-edit"></i>
                             Edit Profile
                         </button>
                     </div>
@@ -74,7 +94,9 @@
                 <!-- Edit Form (Hidden by default) -->
                 <form id="editMode" class="edit-form" method="POST" action="{{url_for('edit_profile')}}" style="display: none;">
                     <div class="form-group">
-                        <label for="name" class="form-label">Full Name</label>
+                        <label for="name" class="form-label">
+                            <i class="fas fa-user"></i> Full Name
+                        </label>
                         <input 
                             type="text" 
                             id="name" 
@@ -87,7 +109,9 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="username" class="form-label">Username</label>
+                        <label for="username" class="form-label">
+                            <i class="fas fa-at"></i> Username
+                        </label>
                         <input 
                             type="text" 
                             id="username" 
@@ -101,11 +125,11 @@
 
                     <div class="button-group">
                         <button type="submit" class="btn btn-success">
-                            <span class="btn-icon">💾</span>
+                            <i class="fas fa-save"></i>
                             Save Changes
                         </button>
                         <button type="button" onclick="cancelEdit()" class="btn btn-secondary">
-                            <span class="btn-icon">❌</span>
+                            <i class="fas fa-times"></i>
                             Cancel
                         </button>
                     </div>
@@ -114,14 +138,16 @@
 
             <!-- Danger Zone -->
             <div class="danger-zone">
-                <h2 class="section-title danger-title">Danger Zone</h2>
+                <h2 class="section-title danger-title">
+                    <i class="fas fa-exclamation-triangle"></i> Danger Zone
+                </h2>
                 <div class="danger-content">
                     <div class="danger-info">
-                        <h3>Delete Account</h3>
+                        <h3><i class="fas fa-trash-alt"></i> Delete Account</h3>
                         <p>Once you delete your account, there is no going back. Please be certain.</p>
                     </div>
                     <button onclick="confirmDelete()" class="btn btn-danger">
-                        <span class="btn-icon">🗑️</span>
+                        <i class="fas fa-trash"></i>
                         Delete Account
                     </button>
                 </div>
@@ -132,17 +158,24 @@
         <div id="deleteModal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2>⚠️ Confirm Account Deletion</h2>
+                    <h2><i class="fas fa-exclamation-triangle"></i> Confirm Account Deletion</h2>
                 </div>
                 <div class="modal-body">
                     <p>Are you absolutely sure you want to delete your account?</p>
-                    <p class="warning-text">This action cannot be undone. All your data will be permanently deleted.</p>
+                    <p class="warning-text">
+                        <i class="fas fa-exclamation-circle"></i>
+                        This action cannot be undone. All your data will be permanently deleted.
+                    </p>
                 </div>
                 <div class="modal-footer">
                     <form method="POST" action="{{url_for('delete_account')}}" style="display: inline;">
-                        <button type="submit" class="btn btn-danger">Yes, Delete My Account</button>
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-trash"></i> Yes, Delete My Account
+                        </button>
                     </form>
-                    <button onclick="closeModal()" class="btn btn-secondary">Cancel</button>
+                    <button onclick="closeModal()" class="btn btn-secondary">
+                        <i class="fas fa-times"></i> Cancel
+                    </button>
                 </div>
             </div>
         </div>

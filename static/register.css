@@ -5,8 +5,8 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #4a5f7f 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -15,20 +15,30 @@ body {
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(52, 73, 94, 0.95);
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     width: 100%;
     max-width: 450px;
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(236, 240, 241, 0.1);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-icon {
+    font-size: 3rem;
+    color: #3498db;
+    margin-bottom: 15px;
 }
 
 .form-title {
     text-align: center;
-    color: #333;
-    margin-bottom: 30px;
+    color: #ecf0f1;
     font-size: 2rem;
     font-weight: 600;
 }
@@ -40,38 +50,62 @@ body {
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    color: #555;
+    color: #bdc3c7;
     font-weight: 500;
+    font-size: 14px;
+}
+
+.form-group label i {
+    color: #3498db;
+    margin-right: 6px;
 }
 
 .form-group input {
     width: 100%;
     padding: 12px 15px;
-    border: 2px solid #e1e5e9;
+    border: 2px solid rgba(236, 240, 241, 0.2);
     border-radius: 8px;
     font-size: 16px;
     transition: all 0.3s ease;
-    background-color: #f8f9fa;
+    background-color: rgba(44, 62, 80, 0.5);
+    color: #ecf0f1;
+}
+
+.form-group input::placeholder {
+    color: #7f8c8d;
 }
 
 .form-group input:focus {
     outline: none;
-    border-color: #ff6b6b;
-    background-color: white;
-    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+    border-color: #3498db;
+    background-color: rgba(44, 62, 80, 0.7);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
 }
 
 .password-strength {
-    margin-top: 5px;
+    margin-top: 8px;
     font-size: 12px;
-    color: #666;
+    color: #bdc3c7;
     height: 15px;
+    font-weight: 500;
+}
+
+.password-strength.weak {
+    color: #e74c3c;
+}
+
+.password-strength.medium {
+    color: #f39c12;
+}
+
+.password-strength.strong {
+    color: #2ecc71;
 }
 
 .btn {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
     color: white;
     border: none;
     border-radius: 8px;
@@ -80,11 +114,20 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn i {
+    font-size: 18px;
 }
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+    background: linear-gradient(135deg, #2980b9 0%, #1f6ba5 100%);
 }
 
 .btn:active {
@@ -98,48 +141,46 @@ body {
 
 .links p {
     margin: 10px 0;
-    color: #666;
+    color: #bdc3c7;
+}
+
+.links p i {
+    color: #3498db;
+    margin-right: 5px;
 }
 
 .links a {
-    color: #ff6b6b;
+    color: #3498db;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .links a:hover {
-    color: #ee5a24;
+    color: #5dade2;
     text-decoration: underline;
 }
 
 .flash-message {
-    background-color: #f8d7da;
-    color: #721c24;
+    background-color: rgba(231, 76, 60, 0.2);
+    color: #e74c3c;
     padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 8px;
     margin-bottom: 20px;
-    border: 1px solid #f5c6cb;
+    border: 1px solid rgba(231, 76, 60, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-/* Success flash message */
 .flash-message.success {
-    background-color: #d4edda;
-    color: #155724;
-    border-color: #c3e6cb;
+    background-color: rgba(46, 204, 113, 0.2);
+    color: #2ecc71;
+    border-color: rgba(46, 204, 113, 0.3);
 }
 
-/* Password strength indicator */
-.password-strength.weak {
-    color: #dc3545;
-}
-
-.password-strength.medium {
-    color: #ffc107;
-}
-
-.password-strength.strong {
-    color: #28a745;
+.flash-message i {
+    font-size: 18px;
 }
 
 /* Responsive design */
@@ -150,5 +191,9 @@ body {
     
     .form-title {
         font-size: 1.5rem;
+    }
+    
+    .form-icon {
+        font-size: 2.5rem;
     }
 }

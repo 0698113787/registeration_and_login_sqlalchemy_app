@@ -4,41 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel = "stylesheet" type = "text/css" href = "{{url_for('static',filename='home.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='home.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div id="statusBar" class="status-bar">
+        <i class="fas fa-info-circle"></i>
         <span id="statusText">Welcome! Please login or register to continue</span>
     </div>
 
     <div class="container">
         <div class="header">
-            <h1>Welcome to Our Platform</h1>
+            <h1><i class="fas fa-rocket"></i> Welcome to Our Platform</h1>
             <p>Your gateway to amazing features and personalized experiences. Join our community today and discover what we have to offer.</p>
         </div>
 
         <div class="main-content">
             <div class="auth-section" id="authSection">
-                <h2>Get Started</h2>
+                <h2><i class="fas fa-user-plus"></i> Get Started</h2>
                 <p>Ready to begin your journey? Login to your existing account or create a new one to access all features.</p>
                 <div class="auth-buttons">
-                    <a href="{{url_for('login')}}" class="btn btn-primary">Login</a>
-                    <a href="{{url_for('register')}}" class="btn btn-secondary">Register</a>
+                    <a href="{{url_for('login')}}" class="btn btn-primary">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </a>
+                    <a href="{{url_for('register')}}" class="btn btn-secondary">
+                        <i class="fas fa-user-plus"></i> Register
+                    </a>
                 </div>
             </div>
         </div>
 
         <div class="features">
             <div class="feature-card">
-                <h3>🔒 Secure Login</h3>
+                <i class="fas fa-lock feature-icon"></i>
+                <h3>Secure Login</h3>
                 <p>Your data is protected with industry-standard security measures and encryption protocols.</p>
             </div>
             <div class="feature-card">
-                <h3>📊 Personal Dashboard</h3>
+                <i class="fas fa-chart-line feature-icon"></i>
+                <h3>Personal Dashboard</h3>
                 <p>Access your personalized dashboard with all your important information and quick actions.</p>
             </div>
             <div class="feature-card">
-                <h3>⚡ Fast & Reliable</h3>
+                <i class="fas fa-bolt feature-icon"></i>
+                <h3>Fast & Reliable</h3>
                 <p>Experience lightning-fast performance with our optimized platform built for efficiency.</p>
             </div>
         </div>

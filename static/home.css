@@ -5,19 +5,25 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #4a5f7f 100%);
     min-height: 100vh;
-    color: #333;
+    color: #ecf0f1;
 }
 
 .status-bar {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(52, 73, 94, 0.9);
     padding: 12px 20px;
     text-align: center;
-    color: white;
+    color: #ecf0f1;
     font-weight: 500;
     backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(236, 240, 241, 0.1);
+}
+
+.status-bar i {
+    margin-right: 8px;
+    color: #3498db;
 }
 
 .container {
@@ -29,13 +35,19 @@ body {
 .header {
     text-align: center;
     margin-bottom: 50px;
-    color: white;
+    color: #ecf0f1;
 }
 
 .header h1 {
     font-size: 3rem;
     margin-bottom: 20px;
     font-weight: 700;
+    color: #ecf0f1;
+}
+
+.header h1 i {
+    color: #3498db;
+    margin-right: 15px;
 }
 
 .header p {
@@ -44,6 +56,7 @@ body {
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
+    color: #bdc3c7;
 }
 
 .main-content {
@@ -53,24 +66,30 @@ body {
 }
 
 .auth-section {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(52, 73, 94, 0.8);
     padding: 40px;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     max-width: 500px;
+    border: 1px solid rgba(236, 240, 241, 0.1);
 }
 
 .auth-section h2 {
     margin-bottom: 20px;
-    color: #333;
+    color: #ecf0f1;
     font-size: 2rem;
+}
+
+.auth-section h2 i {
+    color: #3498db;
+    margin-right: 10px;
 }
 
 .auth-section p {
     margin-bottom: 30px;
-    color: #666;
+    color: #bdc3c7;
     line-height: 1.6;
 }
 
@@ -88,29 +107,37 @@ body {
     font-size: 16px;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn i {
+    font-size: 18px;
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
     color: white;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(30, 60, 114, 0.4);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+    background: linear-gradient(135deg, #2980b9 0%, #1f6ba5 100%);
 }
 
 .btn-secondary {
     background: transparent;
-    color: #1e3c72;
-    border-color: #1e3c72;
+    color: #3498db;
+    border-color: #3498db;
 }
 
 .btn-secondary:hover {
-    background: #1e3c72;
+    background: #3498db;
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
 }
 
 .features {
@@ -121,38 +148,46 @@ body {
 }
 
 .feature-card {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 30px;
+    background: rgba(52, 73, 94, 0.8);
+    padding: 35px;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(236, 240, 241, 0.1);
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(52, 152, 219, 0.3);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: #3498db;
+    margin-bottom: 20px;
 }
 
 .feature-card h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: #333;
+    color: #ecf0f1;
 }
 
 .feature-card p {
-    color: #666;
+    color: #bdc3c7;
     line-height: 1.6;
 }
 
-/* Flash messages for home page */
 .flash-message {
-    background-color: #d4edda;
-    color: #155724;
+    background-color: rgba(46, 204, 113, 0.2);
+    color: #2ecc71;
     padding: 12px 20px;
     border-radius: 8px;
     margin-bottom: 20px;
-    border: 1px solid #c3e6cb;
+    border: 1px solid rgba(46, 204, 113, 0.3);
     text-align: center;
 }
 
@@ -176,6 +211,7 @@ body {
     
     .btn {
         width: 100%;
+        justify-content: center;
     }
     
     .features {

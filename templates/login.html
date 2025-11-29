@@ -5,40 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='login.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <div id="flashContainer">
-            <!-- Display Flask flash messages -->
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
                     {% for message in messages %}
-                        <div class="flash-message">{{ message }}</div>
+                        <div class="flash-message">
+                            <i class="fas fa-exclamation-circle"></i>
+                            {{ message }}
+                        </div>
                     {% endfor %}
                 {% endif %}
             {% endwith %}
         </div>
         
-        <h2 class="form-title">Login</h2>
+        <div class="form-header">
+            <i class="fas fa-sign-in-alt form-icon"></i>
+            <h2 class="form-title">Login</h2>
+        </div>
         
-        <!-- Fixed form: Added method="POST" and action -->
         <form method="POST" action="{{url_for('login')}}">
             <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+                <label for="username">
+                    <i class="fas fa-user"></i> Username
+                </label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
             </div>
             
             <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+                <label for="password">
+                    <i class="fas fa-lock"></i> Password
+                </label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
             
-            <button type="submit" class="btn">Login</button>
+            <button type="submit" class="btn">
+                <i class="fas fa-sign-in-alt"></i> Login
+            </button>
         </form>
         
         <div class="links">
-            <p>Don't have an account? <a href="{{url_for('register')}}">Register here</a></p>
-            <p><a href="{{url_for('home')}}">Back to Home</a></p>
+            <p>
+                <i class="fas fa-user-plus"></i> 
+                Don't have an account? 
+                <a href="{{url_for('register')}}">Register here</a>
+            </p>
+            <p>
+                <i class="fas fa-home"></i> 
+                <a href="{{url_for('home')}}">Back to Home</a>
+            </p>
         </div>
     </div>
 </body>

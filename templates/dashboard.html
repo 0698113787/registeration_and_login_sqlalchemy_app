@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='dashboard.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <!-- Header Section -->
         <header class="header">
             <div class="welcome-section">
-                <h1>🎉 Welcome to Your Dashboard!</h1>
+                <h1><i class="fas fa-party-horn"></i> Welcome to Your Dashboard!</h1>
                 <p class="subtitle">You have successfully logged in</p>
             </div>
             <a href="{{url_for('profile')}}" class="user-info">
-                <span class="user-icon">👤</span>
+                <i class="fas fa-user-circle user-icon"></i>
                 <span class="username">{{ session.get('username', 'User') }}</span>
             </a>
         </header>
@@ -23,7 +24,7 @@
         <!-- Main Content -->
         <main class="main-content">
             <div class="success-card">
-                <div class="success-icon">✅</div>
+                <i class="fas fa-check-circle success-icon"></i>
                 <h2>Authentication Successful!</h2>
                 <p>Your login credentials have been verified and you now have access to your personal dashboard.</p>
             </div>
@@ -31,19 +32,19 @@
             <!-- Feature Cards -->
             <div class="feature-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🔐</div>
+                    <i class="fas fa-shield-alt feature-icon"></i>
                     <h3>Secure Authentication</h3>
                     <p>Your password is safely encrypted using industry-standard hashing techniques.</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">💾</div>
+                    <i class="fas fa-database feature-icon"></i>
                     <h3>Database Storage</h3>
                     <p>User data is securely stored in SQLite database with proper validation.</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
+                    <i class="fas fa-rocket feature-icon"></i>
                     <h3>Flask Framework</h3>
                     <p>Built with Python Flask framework for robust web application development.</p>
                 </div>
@@ -52,18 +53,19 @@
             <!-- Project Info Section -->
             <div class="project-info">
                 <div class="info-card">
+                    <i class="fas fa-code project-icon"></i>
                     <h2>Authentication Application</h2>
                     <p class="made-by">Made by <strong>Andile Ntshangase Mgazi</strong></p>
-                    <p class="thank-you">Thank you for checking it out! 🙏</p>
+                    <p class="thank-you"><i class="fas fa-heart"></i> Thank you for checking it out!</p>
                     
                     <div class="tech-stack">
-                        <h4>Built with:</h4>
+                        <h4><i class="fas fa-tools"></i> Built with:</h4>
                         <div class="tech-badges">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Flask</span>
-                            <span class="tech-badge">SQLAlchemy</span>
-                            <span class="tech-badge">SQLite</span>
-                            <span class="tech-badge">HTML/CSS</span>
+                            <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
+                            <span class="tech-badge"><i class="fas fa-flask"></i> Flask</span>
+                            <span class="tech-badge"><i class="fas fa-layer-group"></i> SQLAlchemy</span>
+                            <span class="tech-badge"><i class="fas fa-database"></i> SQLite</span>
+                            <span class="tech-badge"><i class="fab fa-html5"></i> HTML/CSS</span>
                         </div>
                     </div>
                 </div>
@@ -71,14 +73,21 @@
 
             <!-- Action Buttons -->
             <div class="actions">
-                <a href="{{url_for('home')}}" class="btn btn-primary">Back to Home</a>
-                <a href="{{url_for('logout')}}" class="btn btn-secondary">Logout</a>
+                <a href="{{url_for('profile')}}" class="btn btn-profile">
+                    <i class="fas fa-user"></i> View Profile
+                </a>
+                <a href="{{url_for('home')}}" class="btn btn-primary">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+                <a href="{{url_for('logout')}}" class="btn btn-secondary">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
             </div>
         </main>
 
         <!-- Footer -->
         <footer class="footer">
-            <p>&copy; 2025 Authentication App by Andile Ntshangase Mgazi. All rights reserved.</p>
+            <p><i class="far fa-copyright"></i> 2025 Authentication App by Andile Ntshangase Mgazi. All rights reserved.</p>
         </footer>
     </div>
 </body>
